@@ -1,3 +1,5 @@
+package com.projetopoo;
+
 import javax.swing.*;
 
 public class GuitarraFrame extends JFrame{

@@ -1,18 +1,20 @@
+package com.projetopoo;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CaixaDeMusicaGUI extends JFrame{
+public class CaixaDeInstrumentos extends JFrame{
 
-    public CaixaDeMusicaGUI(){
+    public CaixaDeInstrumentos() {
         super("Caixa de Música"); //chama o construtor do JFrame e passa o nome da janela
 
         criarMenu(); //chama a função pra criar a barra de menu
-        criarOpcoes(); //chama a função para crias as opções de instrumentos
+        criarOpcoes(); //chama a função para crias as opções de com.projetopoo.instrumentos
     }
 
-    private void criarMenu(){
+    private void criarMenu() {
         JMenu menuAjuda = new JMenu("Ajuda"); //cria a opção no menu com nome Ajuda
 
         SobreAction sobreAction = new SobreAction(); //objeto que faz a ação
@@ -31,9 +33,8 @@ public class CaixaDeMusicaGUI extends JFrame{
         barra.add(menuAjuda); //adiciona a opção Ajuda na barra
     }
 
-    private void criarOpcoes(){
+    private void criarOpcoes() {
         setLayout(new BorderLayout()); //escolhe o layout
-
 
         JPanel panelTitulo = new JPanel(); //cria o primeiro painel que será para o titulo
         panelTitulo.setLayout(new FlowLayout()); //escolhe o layout para o painel criado
@@ -108,24 +109,21 @@ public class CaixaDeMusicaGUI extends JFrame{
         add(panelDados, BorderLayout.CENTER); //adiciona o painel no centro
     }
 
-    private class SobreAction implements ActionListener { //classe pra criar o objeto que ira fazer a ação
-
+    private static class SobreAction implements ActionListener { //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) { //recebe um evento
             JOptionPane.showMessageDialog(null, "Projeto POO - Caixa de Instrumentos\nAlunos: Caio Nery e Luca Argolo", "Sobre", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
-    private class ComoUsarAction implements ActionListener { //classe pra criar o objeto que ira fazer a ação
-
+    private static class ComoUsarAction implements ActionListener { //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) { //recebe um evento
             JOptionPane.showMessageDialog(null, "1. Clique no instrumento de sua preferência\n2. Na nova janela aberta, escolha a nota que gostaria de escutar", "Como Usar", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
-    private class GuitarraAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-
+    private static class GuitarraAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
             GuitarraFrame f = new GuitarraFrame();
@@ -134,40 +132,35 @@ public class CaixaDeMusicaGUI extends JFrame{
             f.setVisible(true);        }
     }
 
-    private class ViolaoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-
+    private static class ViolaoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Som de violão", "Violão", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
-    private class ViolinoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-
+    private static class ViolinoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Som de violino", "Violino", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
-    private class BaixoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-
+    private static class BaixoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Som de baixo", "Baixo", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
-    private class SaxofoneAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-
+    private static class SaxofoneAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Som de saxofone", "Saxofone", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
-    private class FlautaAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-
+    private static class FlautaAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
             JOptionPane.showMessageDialog(null, "Som de flauta", "Flauta", JOptionPane.PLAIN_MESSAGE);
