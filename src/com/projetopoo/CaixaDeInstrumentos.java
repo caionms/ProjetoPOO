@@ -1,11 +1,21 @@
 package com.projetopoo;
 
+import com.projetopoo.instrumentos.Instrumento;
+import com.projetopoo.instrumentos.impl.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CaixaDeInstrumentos extends JFrame{
+public class CaixaDeInstrumentos extends JFrame {
+
+    public static Instrumento BAIXO = new Baixo();
+    public static Instrumento FLAUTA = new Flauta();
+    public static Instrumento GUITARRA = new Guitarra();
+    public static Instrumento SAXOFONE = new Saxofone();
+    public static Instrumento VIOLAO = new Violao();
+    public static Instrumento VIOLINO = new Violino();
 
     public CaixaDeInstrumentos() {
         super("Caixa de Música"); //chama o construtor do JFrame e passa o nome da janela
@@ -60,32 +70,32 @@ public class CaixaDeInstrumentos extends JFrame{
         panelaux4.setLayout(new BorderLayout()); //escolhe o layout para o painel criado
 
 
-        GuitarraAction guitarraAction = new GuitarraAction();
+        InstrumentoAction guitarraAction = new InstrumentoAction(GUITARRA);
         JButton botaoGuitarra = new JButton("Guitarra"); //cria o botao OK
         botaoGuitarra.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoGuitarra.addActionListener(guitarraAction); //objeto ajudaAction faz açao
 
-        ViolaoAction violaoAction = new ViolaoAction();
+        InstrumentoAction violaoAction = new InstrumentoAction(VIOLAO);
         JButton botaoViolao = new JButton("Violão"); //cria o botao OK
         botaoViolao.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoViolao.addActionListener(violaoAction); //objeto ajudaAction faz açao
 
-        ViolinoAction violinoAction = new ViolinoAction();
+        InstrumentoAction violinoAction = new InstrumentoAction(VIOLINO);
         JButton botaoViolino = new JButton("Violino"); //cria o botao OK
         botaoViolino.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoViolino.addActionListener(violinoAction); //objeto ajudaAction faz açao
 
-        BaixoAction baixoAction = new BaixoAction();
+        InstrumentoAction baixoAction = new InstrumentoAction(BAIXO);
         JButton botaoBaixo = new JButton("Baixo"); //cria o botao OK
         botaoBaixo.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoBaixo.addActionListener(baixoAction); //objeto ajudaAction faz açao
 
-        FlautaAction flautaAction = new FlautaAction();
+        InstrumentoAction flautaAction = new InstrumentoAction(FLAUTA);
         JButton botaoFlauta = new JButton("Flauta"); //cria o botao OK
         botaoFlauta.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoFlauta.addActionListener(flautaAction); //objeto ajudaAction faz açao
 
-        SaxofoneAction saxofoneAction = new SaxofoneAction();
+        InstrumentoAction saxofoneAction = new InstrumentoAction(SAXOFONE);
         JButton botaoSaxofone = new JButton("Saxofone"); //cria o botao OK
         botaoSaxofone.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoSaxofone.addActionListener(saxofoneAction); //objeto ajudaAction faz açao
@@ -123,59 +133,17 @@ public class CaixaDeInstrumentos extends JFrame{
         }
     }
 
-    private static class GuitarraAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            GuitarraFrame f = new GuitarraFrame();
-            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,300);
-            f.setVisible(true);
+    private static class InstrumentoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
+
+        private Instrumento instrumento;
+
+        public InstrumentoAction(Instrumento instrumento) {
+            this.instrumento = instrumento;
         }
-    }
 
-    private static class ViolaoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
-            ViolaoFrame f = new ViolaoFrame();
-            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,300);
-            f.setVisible(true);
-        }
-    }
-
-    private static class ViolinoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            ViolinoFrame f = new ViolinoFrame();
-            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,300);
-            f.setVisible(true);        }
-    }
-
-    private static class BaixoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            BaixoFrame f = new BaixoFrame();
-            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,300);
-            f.setVisible(true);
-        }
-    }
-
-    private static class SaxofoneAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            SaxofoneFrame f = new SaxofoneFrame();
-            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,300);
-            f.setVisible(true);
-        }
-    }
-
-    private static class FlautaAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            FlautaFrame f = new FlautaFrame();
+            InstrumentoFrame f = new InstrumentoFrame(this.instrumento);
             f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             f.setSize(300,300);
             f.setVisible(true);

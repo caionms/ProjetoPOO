@@ -37,7 +37,8 @@ public abstract class Instrumento implements Playable {
         new Thread(() -> {
             try {
                 Clip clip = AudioSystem.getClip();
-                InputStream inputStream = Aplicacao.class.getResourceAsStream(this.getAudioPath() + "/" + note + ".wav");
+                String inputPath = this.getAudioPath() + "/" + note + "-" + getNotes().get(note).getLabel() + ".wav";
+                InputStream inputStream = Aplicacao.class.getResourceAsStream(inputPath);
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(inputStream);
                 clip.open(audioStream);
                 clip.start();
