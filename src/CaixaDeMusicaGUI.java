@@ -128,8 +128,10 @@ public class CaixaDeMusicaGUI extends JFrame{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Som da guitarra", "Guitarra", JOptionPane.PLAIN_MESSAGE);
-        }
+            GuitarraFrame f = new GuitarraFrame();
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.setSize(300,300);
+            f.setVisible(true);        }
     }
 
     private class ViolaoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
