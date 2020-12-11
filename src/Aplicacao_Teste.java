@@ -10,7 +10,7 @@ public class Aplicacao_Teste {
         CaixaDeMusicaGUI c1 = new CaixaDeMusicaGUI();
 
         c1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //define o padrão de fechamento da janela
-        c1.setSize(480,180); //define o tamanho da janela
+        c1.setSize(700,360); //define o tamanho da janela
         c1.setVisible(true); //define que a janela é visivel
 
         //Aplicacao_Teste ap = new Aplicacao_Teste();
