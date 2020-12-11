@@ -129,41 +129,56 @@ public class CaixaDeInstrumentos extends JFrame{
             GuitarraFrame f = new GuitarraFrame();
             f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             f.setSize(300,300);
-            f.setVisible(true);        }
+            f.setVisible(true);
+        }
     }
 
     private static class ViolaoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Som de violão", "Violão", JOptionPane.PLAIN_MESSAGE);
+            ViolaoFrame f = new ViolaoFrame();
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            f.setSize(300,300);
+            f.setVisible(true);
         }
     }
 
     private static class ViolinoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Som de violino", "Violino", JOptionPane.PLAIN_MESSAGE);
-        }
+            ViolinoFrame f = new ViolinoFrame();
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            f.setSize(300,300);
+            f.setVisible(true);        }
     }
 
     private static class BaixoAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Som de baixo", "Baixo", JOptionPane.PLAIN_MESSAGE);
+            BaixoFrame f = new BaixoFrame();
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            f.setSize(300,300);
+            f.setVisible(true);
         }
     }
 
     private static class SaxofoneAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Som de saxofone", "Saxofone", JOptionPane.PLAIN_MESSAGE);
+            SaxofoneFrame f = new SaxofoneFrame();
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            f.setSize(300,300);
+            f.setVisible(true);
         }
     }
 
     private static class FlautaAction implements ActionListener{ //classe pra criar o objeto que ira fazer a ação
         @Override
         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Som de flauta", "Flauta", JOptionPane.PLAIN_MESSAGE);
+            FlautaFrame f = new FlautaFrame();
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            f.setSize(300,300);
+            f.setVisible(true);
         }
     }
 }
