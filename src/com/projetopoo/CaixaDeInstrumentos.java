@@ -145,7 +145,7 @@ public class CaixaDeInstrumentos extends JFrame {
         public void actionPerformed(ActionEvent e) {
             InstrumentoFrame f = new InstrumentoFrame(this.instrumento);
             f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,300);
+            f.setSize(300,310);
             f.setVisible(true);
         }
     }

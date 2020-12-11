@@ -21,10 +21,7 @@ public class InstrumentoFrame extends JFrame {
     }
 
     private void criarOpcoes(){
-        Flauta f = new Flauta();
-        List<Nota>  l = f.getNotes();
-
-        setLayout(new FlowLayout()); //escolhe o layout
+        setLayout(new BorderLayout()); //escolhe o layout
 
         JPanel panelDados = new JPanel(); //cria o painel que vai ter o preenchimento de dados
         panelDados.setLayout(new FlowLayout()); //boxlayout ordenando pelo eixo
@@ -38,7 +35,7 @@ public class InstrumentoFrame extends JFrame {
             panelDados.add(botaoNota);
         });
 
-        add(panelDados);
+        add(panelDados, BorderLayout.CENTER);
     }
 
     private static class NotaAction implements ActionListener { //classe pra criar o objeto que ira fazer a ação
