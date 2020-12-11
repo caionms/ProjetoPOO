@@ -1,6 +1,6 @@
 package com.projetopoo;
 
-import com.projetopoo.instrumentos.impl.Guitarra;
+import com.projetopoo.instrumentos.impl.Saxofone;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,15 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GuitarraFrame extends JFrame{
-    public GuitarraFrame() {
-        super("Guitarra"); //chama o construtor do JFrame e passa o nome da janela
+public class SaxofoneFrame extends JFrame{
+    public SaxofoneFrame() {
+        super("Saxofone"); //chama o construtor do JFrame e passa o nome da janela
         criarOpcoes(); //chama a função para crias as opções de notas
     }
 
     private void criarOpcoes(){
-        Guitarra g = new Guitarra();
-        List<Nota>  l = g.getNotes();
+        Saxofone s = new Saxofone();
+        List<Nota>  l = s.getNotes();
 
         setLayout(new FlowLayout()); //escolhe o layout
 
