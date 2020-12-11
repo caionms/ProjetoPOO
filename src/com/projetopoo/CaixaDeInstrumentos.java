@@ -127,7 +127,7 @@ public class CaixaDeInstrumentos extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             GuitarraFrame f = new GuitarraFrame();
-            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
             f.setSize(300,300);
             f.setVisible(true);        }
     }
