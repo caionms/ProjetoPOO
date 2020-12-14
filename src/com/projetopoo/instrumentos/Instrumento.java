@@ -8,6 +8,10 @@ package com.projetopoo.instrumentos;
 
 import com.projetopoo.Aplicacao;
 import com.projetopoo.Playable;
+import com.projetopoo.instrumentos.impl.Flauta;
+import com.projetopoo.instrumentos.impl.Saxofone;
+import com.projetopoo.instrumentos.impl.Violao;
+import com.projetopoo.instrumentos.impl.Violino;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -29,6 +33,7 @@ public abstract class Instrumento implements Playable {
 
     public Instrumento(String nome, Tipo tipo) {
         this.nome = nome;
+        this.tipo = tipo;
     }
 
     public String getNome(){
@@ -37,6 +42,20 @@ public abstract class Instrumento implements Playable {
 
     public Tipo getTipo() {
         return this.tipo;
+    }
+
+    public static String getInstrumentData(Instrumento instrumento) throws Exception {
+        if(instrumento instanceof Flauta) {
+            return ((Flauta) instrumento).getFlautaInfo();
+        }else if(instrumento instanceof Saxofone) {
+            return ((Saxofone) instrumento).getSaxofoneInfo();
+        }else if(instrumento instanceof Violao) {
+            return ((Violao) instrumento).getViolaoInfo();
+        }else if(instrumento instanceof Violino) {
+            return ((Violino) instrumento).getViolinoInfo();
+        }else{
+            throw new Exception("Instumento não encontrado");
+        }
     }
 
     @Override
@@ -54,6 +73,11 @@ public abstract class Instrumento implements Playable {
                 e.printStackTrace();
             }
         }).start();
+    }
+
+    @Override
+    public void play() {
+        this.play(0);
     }
 
 }

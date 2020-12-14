@@ -36,6 +36,10 @@ public class Violao extends InstrumentoDeCorda {
         notas.add(new Nota("D5"));
     }
 
+    public String getViolaoInfo() {
+        return "A guitarra clássica (conhecida no Brasil como violão) é uma guitarra acústica com cordas de nylon, aço ou tendões de animais, concebida inicialmente para a interpretação de peças de música erudita. O corpo é oco e chato, em forma de oito, e feito de várias madeiras diferentes. O braço possui trastes que a tornam um instrumento temperado. As versões mais comuns possuem seis cordas de nylon, mas há violões com outras configurações, como o violão de sete cordas e o violão baixo, com 4 cordas, afinadas uma oitava abaixo das 4 cordas mais graves do violão/viola.";
+    }
+
     @Override
     public List<Nota> getNotes() {
         return this.notas;

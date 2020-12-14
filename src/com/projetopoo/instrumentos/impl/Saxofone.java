@@ -52,6 +52,10 @@ public class Saxofone extends InstrumentoDeSopro {
         notas.add(new Nota("Gb5"));
     }
 
+    public String getSaxofoneInfo() {
+        return "Saxofone, também conhecido popularmente como sax, é um instrumento de sopro patenteado em 1846 pelo belga Adolphe Sax, um respeitado fabricante de instrumentos, que viveu na França no século XIX. Os saxofones são instrumentos transpositores, ou seja, a nota escrita não é a mesma nota que ouvimos (som real ou nota de efeito).";
+    }
+
     @Override
     public List<Nota> getNotes() {
         return this.notas;

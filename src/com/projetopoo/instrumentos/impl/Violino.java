@@ -40,6 +40,10 @@ public class Violino extends InstrumentoDeCorda {
         notas.add(new Nota("D5"));
     }
 
+    public String getViolinoInfo() {
+        return "O violino é um instrumento musical, classificado como instrumento de cordas friccionadas. É o menor e mais agudo dos instrumentos de sua família (que ainda possui a viola, o violoncelo e o contrabaixo, correspondendo ao Soprano da voz humana). O violino possui quatro cordas, com afinação da mais aguda à mais grave: O timbre do violino é agudo, brilhante e estridente, mas dependendo do encordamento utilizado e da forma que é tocado, podem-se produzir timbres mais aveludados. O som geralmente é produzido pela ação de friccionar as cerdas de um arco de madeira sobre as cordas.";
+    }
+
     @Override
     public List<Nota> getNotes() {
         return this.notas;

@@ -32,6 +32,10 @@ public class Flauta extends InstrumentoDeSopro {
         notas.add(new Nota("F#4"));
     }
 
+    public String getFlautaInfo() {
+        return "A flauta é o instrumento instrumento musical de sopro feito de diversos tipos de madeiras com formato de um tubo oco com orifícios. É um aerofone que, a partir do fluxo de ar dirigido a uma aresta que vibra com a passagem do ar, emite som. Bastante antigo, a execução de tal instrumento consiste no ato de soprar o interior do tubo ao mesmo tempo em que se tapam e/ou destapam os orifícios com os dedos.";
+    }
+
     @Override
     public List<Nota> getNotes() {
         return this.notas;

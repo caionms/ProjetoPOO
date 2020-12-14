@@ -16,4 +16,6 @@ public interface Playable {
 
     void play(int note);
 
+    void play();
+
 }
