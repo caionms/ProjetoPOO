@@ -21,6 +21,6 @@ public class Guitarra extends InstrumentoDeCorda {
 
     @Override
     public String getAudioPath() {
-        return null;
+        return "/electric_guitar";
     }
 }

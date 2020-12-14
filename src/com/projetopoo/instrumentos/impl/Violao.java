@@ -12,6 +12,22 @@ public class Violao extends InstrumentoDeCorda {
 
     public Violao() {
         super("Violão", 6);
+        notas.add(new Nota("A2A3"));
+        notas.add(new Nota("B2"));
+        notas.add(new Nota("E2"));
+        notas.add(new Nota("F2"));
+        notas.add(new Nota("F2F3"));
+        notas.add(new Nota("A3"));
+        notas.add(new Nota("B3"));
+        notas.add(new Nota("C#3"));
+        notas.add(new Nota("D3"));
+        notas.add(new Nota("B3B4"));
+        notas.add(new Nota("B4"));
+        notas.add(new Nota("C#3C#4"));
+        notas.add(new Nota("C#4"));
+        notas.add(new Nota("D#4"));
+        notas.add(new Nota("E4"));
+        notas.add(new Nota("D5"));
     }
 
     @Override
@@ -21,6 +37,6 @@ public class Violao extends InstrumentoDeCorda {
 
     @Override
     public String getAudioPath() {
-        return null;
+        return "/guitar";
     }
 }

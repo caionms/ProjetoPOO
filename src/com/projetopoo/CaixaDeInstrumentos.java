@@ -3,10 +3,12 @@ package com.projetopoo;
 import com.projetopoo.instrumentos.Instrumento;
 import com.projetopoo.instrumentos.impl.*;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class CaixaDeInstrumentos extends JFrame {
 
@@ -70,24 +72,29 @@ public class CaixaDeInstrumentos extends JFrame {
         panelaux4.setLayout(new BorderLayout()); //escolhe o layout para o painel criado
 
         //Icon guitarraIcon = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/guitarra.jpeg");
-        Image imgGuitarra = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/guitarra.jpeg").getImage();
-        Image newimgGuitarra = imgGuitarra.getScaledInstance(70 , 70,  java.awt.Image.SCALE_SMOOTH ) ;
-        Icon guitarraIcon = new ImageIcon( newimgGuitarra );
-        Image imgViolao = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/violao.jpeg").getImage();
-        Image newimgViolao = imgViolao.getScaledInstance(70 , 70,  java.awt.Image.SCALE_SMOOTH ) ;
-        Icon violaoIcon = new ImageIcon( newimgViolao);
-        Image imgViolino = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/violino.jpeg").getImage();
-        Image newimgViolino = imgViolino.getScaledInstance(70 , 70,  java.awt.Image.SCALE_SMOOTH ) ;
-        Icon violinoIcon = new ImageIcon( newimgViolino);
-        Image imgBaixo = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/baixo.jpeg").getImage();
-        Image newimgBaixo = imgBaixo.getScaledInstance(70 , 70,  java.awt.Image.SCALE_SMOOTH ) ;
-        Icon baixoIcon = new ImageIcon( newimgBaixo);
-        Image imgFlauta = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/flauta.jpeg").getImage();
-        Image newimgFlauta = imgFlauta.getScaledInstance(70 , 70,  java.awt.Image.SCALE_SMOOTH ) ;
-        Icon flautaIcon = new ImageIcon( newimgFlauta);
-        Image imgSaxofone = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/saxofone.jpeg").getImage();
-        Image newimgSaxofone = imgSaxofone.getScaledInstance(70 , 70,  java.awt.Image.SCALE_SMOOTH ) ;
-        Icon saxofoneIcon = new ImageIcon( newimgSaxofone);
+        Icon guitarraIcon = null, violaoIcon = null, violinoIcon = null, baixoIcon = null, flautaIcon = null, saxofoneIcon = null;
+        try {
+            Image imgGuitarra = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/guitarra.jpeg"))).getImage();
+            Image newimgGuitarra = imgGuitarra.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
+            guitarraIcon = new ImageIcon(newimgGuitarra);
+            Image imgViolao = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/violao.jpeg"))).getImage();
+            Image newimgViolao = imgViolao.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
+            violaoIcon = new ImageIcon(newimgViolao);
+            Image imgViolino = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/violino.jpeg"))).getImage();
+            Image newimgViolino = imgViolino.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
+            violinoIcon = new ImageIcon(newimgViolino);
+            Image imgBaixo = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/baixo.jpeg"))).getImage();
+            Image newimgBaixo = imgBaixo.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
+            baixoIcon = new ImageIcon(newimgBaixo);
+            Image imgFlauta = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/flauta.jpeg"))).getImage();
+            Image newimgFlauta = imgFlauta.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
+            flautaIcon = new ImageIcon(newimgFlauta);
+            Image imgSaxofone = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/saxofone.jpeg"))).getImage();
+            Image newimgSaxofone = imgSaxofone.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
+            saxofoneIcon = new ImageIcon(newimgSaxofone);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         InstrumentoAction guitarraAction = new InstrumentoAction(GUITARRA);
         JButton botaoGuitarra = new JButton(guitarraIcon); //cria o botao OK
