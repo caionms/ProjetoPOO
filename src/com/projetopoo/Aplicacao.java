@@ -4,7 +4,8 @@ import javax.swing.*;
 
 public class Aplicacao {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException {
+        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         CaixaDeInstrumentos c1 = new CaixaDeInstrumentos();
 
         c1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //define o padrão de fechamento da janela
