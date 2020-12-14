@@ -12,9 +12,7 @@ import java.io.IOException;
 
 public class CaixaDeInstrumentos extends JFrame {
 
-    public static Instrumento BAIXO = new Baixo();
     public static Instrumento FLAUTA = new Flauta();
-    public static Instrumento GUITARRA = new Guitarra();
     public static Instrumento SAXOFONE = new Saxofone();
     public static Instrumento VIOLAO = new Violao();
     public static Instrumento VIOLINO = new Violino();
@@ -65,27 +63,15 @@ public class CaixaDeInstrumentos extends JFrame {
         JPanel panelaux2 = new JPanel(); //cria o painel que vai ter o preenchimento de dados
         panelaux2.setLayout(new BorderLayout()); //escolhe o layout para o painel criado
 
-        JPanel panelaux3 = new JPanel(); //cria o painel que vai ter o preenchimento de dados
-        panelaux3.setLayout(new BorderLayout()); //escolhe o layout para o painel criado
-
-        JPanel panelaux4 = new JPanel(); //cria o painel que vai ter o preenchimento de dados
-        panelaux4.setLayout(new BorderLayout()); //escolhe o layout para o painel criado
-
         //Icon guitarraIcon = new ImageIcon("/home/caio/ProjetoPOO/resources/icons/guitarra.jpeg");
-        Icon guitarraIcon = null, violaoIcon = null, violinoIcon = null, baixoIcon = null, flautaIcon = null, saxofoneIcon = null;
+        Icon violaoIcon = null, violinoIcon = null, flautaIcon = null, saxofoneIcon = null;
         try {
-            Image imgGuitarra = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/guitarra.jpeg"))).getImage();
-            Image newimgGuitarra = imgGuitarra.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
-            guitarraIcon = new ImageIcon(newimgGuitarra);
             Image imgViolao = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/violao.jpeg"))).getImage();
             Image newimgViolao = imgViolao.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
             violaoIcon = new ImageIcon(newimgViolao);
             Image imgViolino = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/violino.jpeg"))).getImage();
             Image newimgViolino = imgViolino.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
             violinoIcon = new ImageIcon(newimgViolino);
-            Image imgBaixo = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/baixo.jpeg"))).getImage();
-            Image newimgBaixo = imgBaixo.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
-            baixoIcon = new ImageIcon(newimgBaixo);
             Image imgFlauta = new ImageIcon(ImageIO.read(Aplicacao.class.getResourceAsStream("/icons/flauta.jpeg"))).getImage();
             Image newimgFlauta = imgFlauta.getScaledInstance(70, 70, java.awt.Image.SCALE_SMOOTH);
             flautaIcon = new ImageIcon(newimgFlauta);
@@ -95,11 +81,6 @@ public class CaixaDeInstrumentos extends JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        InstrumentoAction guitarraAction = new InstrumentoAction(GUITARRA);
-        JButton botaoGuitarra = new JButton(guitarraIcon); //cria o botao OK
-        //botaoGuitarra.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
-        botaoGuitarra.addActionListener(guitarraAction); //objeto ajudaAction faz açao
 
         InstrumentoAction violaoAction = new InstrumentoAction(VIOLAO);
         JButton botaoViolao = new JButton(violaoIcon); //cria o botao OK
@@ -111,11 +92,6 @@ public class CaixaDeInstrumentos extends JFrame {
         //botaoViolino.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoViolino.addActionListener(violinoAction); //objeto ajudaAction faz açao
 
-        InstrumentoAction baixoAction = new InstrumentoAction(BAIXO);
-        JButton botaoBaixo = new JButton(baixoIcon); //cria o botao OK
-        //botaoBaixo.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
-        botaoBaixo.addActionListener(baixoAction); //objeto ajudaAction faz açao
-
         InstrumentoAction flautaAction = new InstrumentoAction(FLAUTA);
         JButton botaoFlauta = new JButton(flautaIcon); //cria o botao OK
         //botaoFlauta.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
@@ -126,17 +102,13 @@ public class CaixaDeInstrumentos extends JFrame {
         //botaoSaxofone.setPreferredSize(new Dimension(280,25)); //mudar o tamanho do botão - 280/23 com menu
         botaoSaxofone.addActionListener(saxofoneAction); //objeto ajudaAction faz açao
 
-        panelaux1.add(botaoGuitarra, BorderLayout.WEST); //adiciona no painel o label no canto esquerdo
         panelaux1.add(botaoViolao, BorderLayout.EAST); //adiciona no panel o campo no canto direito
-        panelaux2.add(botaoBaixo, BorderLayout.WEST);
-        panelaux2.add(botaoViolino, BorderLayout.EAST);
-        panelaux3.add(botaoFlauta, BorderLayout.WEST);
-        panelaux3.add(botaoSaxofone, BorderLayout.EAST);
+        panelaux1.add(botaoViolino, BorderLayout.WEST);
+        panelaux2.add(botaoFlauta, BorderLayout.EAST);
+        panelaux2.add(botaoSaxofone, BorderLayout.WEST);
 
-        panelDados.add(panelaux1); //adiciona os 4 paineis na vertical no boxlayout para ficarem ordenados
+        panelDados.add(panelaux1);
         panelDados.add(panelaux2);
-        panelDados.add(panelaux3);
-        panelDados.add(panelaux4);
 
         JPanel panelBotao = new JPanel(); //cria o painel do botao
         panelBotao.setLayout(new BorderLayout()); //define o layout do painel
@@ -171,7 +143,7 @@ public class CaixaDeInstrumentos extends JFrame {
         public void actionPerformed(ActionEvent e) {
             InstrumentoFrame f = new InstrumentoFrame(this.instrumento);
             f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-            f.setSize(300,310);
+            f.setSize(300,800);
             f.setVisible(true);
         }
     }
