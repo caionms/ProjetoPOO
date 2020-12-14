@@ -1,3 +1,9 @@
+/**
+ *  Classe aplicação por onde o programa será executado, criando a janela principal.
+ *  @author Caio Nery e Luca Argolo
+ *  @version final
+ */
+
 package com.projetopoo;
 
 import javax.swing.*;

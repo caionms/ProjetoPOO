@@ -1,3 +1,9 @@
+/**
+ *  Classe que representa um violino e que extende a classe InstrumentoDeCorda.
+ *  @author Caio Nery e Luca Argolo
+ *  @version final
+ */
+
 package com.projetopoo.instrumentos.impl;
 
 import com.projetopoo.Nota;

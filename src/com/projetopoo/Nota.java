@@ -1,3 +1,9 @@
+/**
+ *  Classe abstrata que representa uma nota.
+ *  @author Caio Nery e Luca Argolo
+ *  @version final
+ */
+
 package com.projetopoo;
 
 public class Nota {

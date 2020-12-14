@@ -1,3 +1,9 @@
+/**
+ *  Classe para prencher a janela do instrumento com as opções de nota.
+ *  @author Caio Nery e Luca Argolo
+ *  @version final
+ */
+
 package com.projetopoo;
 
 import com.projetopoo.instrumentos.Instrumento;

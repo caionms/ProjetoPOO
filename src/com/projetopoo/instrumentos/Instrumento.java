@@ -1,3 +1,9 @@
+/**
+ *  Classe abstrata que representa um instrumento.
+ *  @author Caio Nery e Luca Argolo
+ *  @version final
+ */
+
 package com.projetopoo.instrumentos;
 
 import com.projetopoo.Aplicacao;

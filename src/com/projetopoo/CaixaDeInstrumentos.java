@@ -1,3 +1,9 @@
+/**
+ *  Classe para prencher a janela principal com os dados.
+ *  @author Caio Nery e Luca Argolo
+ *  @version final
+ */
+
 package com.projetopoo;
 
 import com.projetopoo.instrumentos.Instrumento;
